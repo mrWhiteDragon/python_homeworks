@@ -1,0 +1,26 @@
+select name from product
+join purchase on product.id = purchase.product_id
+where purch
+ase.customer_id = 3
+
+select * from product
+
+select fio, name from customer
+join purchase on customer.id = purchase.customer_id
+join product on product.id = purchase.product_id
+
+select fio from customer
+join purchase on customer.id = purchase.customer_id
+join product on product.id = purchase.product_id
+where name = 'Ноутбук'
+
+select name as Наименование, count(name) as Количество from product
+join purchase on product.id = purchase.product_id
+group by name
+
+select distinct name from product
+join purchase on product.id = purchase.product_id
+
+select fio as Покупатель, count(*) as 'Количество покупок' from customer
+join purchase on customer.id = purchase.customer_id
+group by fio having count(*) > 2
